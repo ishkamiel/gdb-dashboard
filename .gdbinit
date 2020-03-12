@@ -1931,6 +1931,19 @@ class Registers(Dashboard.Module):
             # Exclude registers with a dot '.' or parse_and_eval() will fail
             if '.' in name:
                 continue
+            # Exclude user-mode qemu aarch64 registers
+            if 'DBG' in name:
+                continue
+            if 'ID' in name:
+                continue
+            if 'EL0' in name:
+                continue
+            if 'EL1' in name:
+                continue
+            if 'EL2' in name:
+                continue
+            if 'EL3' in name:
+                continue
             value = gdb.parse_and_eval('${}'.format(name))
             string_value = Registers.format_value(value)
             changed = self.table and (self.table.get(name, '') != string_value)

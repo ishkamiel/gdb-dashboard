@@ -1,3 +1,10 @@
+# Fork of [github.com/cyrus-and/gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard)
+
+Original README.md below. Changes made by me:
+- Disable output of qemu-aarch64 registers
+
+---
+
 # GDB dashboard
 
 GDB dashboard is a standalone `.gdbinit` file written using the [Python API][] that enables a modular interface showing relevant information about the program being debugged. Its main goal is to reduce the number of GDB commands needed to inspect the status of current program thus allowing the developer to primarily focus on the control flow.
